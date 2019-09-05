@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "PostList";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Update post</h2>
+    </div>
+</div>
+<hr />
+@using (Html.BeginForm("UpdatePost", "Post", FormMethod.Post))
+{
+    <input type="hidden" name="id" value="@ViewBag.pId" />
+    <div class="row">
+        <div class="col-lg-6 form-group">
+            <input class="form-control" type="text" name="pN" placeholder="Tile..." value="@ViewBag.pT" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 form-group">
+            <input class="form-control" type="url" name="pCov" placeholder="Cover photo URL..." value="@ViewBag.pCov" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 form-group">
+            <select class="form-control" name="pCat" required>
+                <option value="none" disabled>Select a category</option>
+                @Html.Raw(ViewBag.pCat)
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 form-group">
+            <textarea class="form-control" name="pCon">@Html.Raw(ViewBag.pCon)</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 form-group">
+            <a href="@Url.Action("PostList", "Post")" class="btn btn-secondary">Back</a>
+            <button type="submit" class="btn btn-primary">Done</button>
+        </div>
+    </div>
+}
+<br />
+<br />
+
+<script src="~/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        height: "300px",
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor textcolor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table contextmenu paste code help wordcount'
+        ],
+        toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        content_css: [
+          '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+          '//www.tinymce.com/css/codepen.min.css'],
+        file_browser_callback: function (field_name, url, type, win) {
+            win.document.getElementById(field_name).value = 'my browser value';
+        },
+
+    });
+</script>
+<script src="~/Contents/jquery.min.js"></script>
+<script>
+    
+</script>
+
+
+
+
+

@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login | stories.bishalsarker</title>
+    <link href="~/Contents/bootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Contents/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Contents/sb-admin.css" rel="stylesheet" />
+    <style>
+        .header-logo {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header header-logo">
+                <h1>stories.bishalsarker</h1>
+            </div>
+            <div class="card-body">
+                <p class="text-danger"><b>@TempData["Msg"]</b></p>
+                @using (Html.BeginForm("Index", "Admin"))
+                {
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input class="form-control" type="text" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password">
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Login</button>
+                }
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="register.html"></a>
+                    <a class="d-block small" href="forgot-password.html"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Contents/jquery.min.js"></script>
+    <script src="~/Contents/bootstrap.bundle.min.js"></script>
+    <script src="~/Contents/jquery.easing.min.js"></script>
+    <script src="~/Contents/sb-admin.min.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>stories.bishalsarker | Find what I like, what I do, what I love</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Contents/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Contents/open-iconic-bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/Contents/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Contents/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/Contents/icomoon.css">
+    <link rel="stylesheet" href="~/Contents/animate.css">
+    <link rel="stylesheet" href="~/Contents/style.css">
+    <link href="~/Contents/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <aside class="probootstrap-aside js-probootstrap-aside">
+        <a href="#" class="probootstrap-close-menu js-probootstrap-close-menu d-md-none"><i class="fa fa-fw fa-angle-double-left fa-lg"></i></a>
+        <div class="probootstrap-site-logo probootstrap-animate" data-animate-effect="fadeInLeft">
+
+            <a href="@Url.Action("Index", "Home")" class="mb-2 d-block probootstrap-logo"><img src="~/Contents/logo.svg" /></a>
+        </div>
+        <div class="probootstrap-overflow">
+            <div class="pills-container">
+                <a href="@Url.Action("Tag", "Home", new { cat_id = "all" })"><span class="pills">#all</span></a>
+                <a href="@Url.Action("Tag", "Home", new { cat_id = "latest" })"><span class="pills">#latest</span></a>
+                @Html.Raw(ViewBag.cList)
+            </div>
+            <footer class="probootstrap-aside-footer probootstrap-animate" data-animate-effect="fadeInLeft">
+                <p>&copy 2018 bishal sarker. all rights reserved</p>
+            </footer>
+        </div>
+    </aside>
+    <main role="main" class="probootstrap-main js-probootstrap-main">
+        <div class="probootstrap-bar">
+            <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><i class="fa fa-bars"></i></a>
+            <div class="probootstrap-main-site-logo"><img src="~/Contents/logo-2.svg" /></div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+        <div class="container-fluid d-md-none">
+            <div class="row">
+                <div class="col-md-12 text-center" style="color: #333333;">
+                    <p>&copy 2018 bishal sarker. all rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/Contents/jquery-3.2.1.slim.min.js"></script>
+    <script src="~/Contents/popper.min.js"></script>
+    <script src="~/Contents/bootstrap.min.js"></script>
+    <script src="~/Contents/owl.carousel.min.js"></script>
+    <script src="~/Contents/jquery.waypoints.min.js"></script>
+    <script src="~/Contents/imagesloaded.pkgd.min.js"></script>
+
+    <script src="~/Contents/main.js"></script>
+
+</body>
+</html>

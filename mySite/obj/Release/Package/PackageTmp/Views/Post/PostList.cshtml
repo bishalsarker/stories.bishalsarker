@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "PostList";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>All Posts</h2>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-lg-12">
+        <a class="btn btn-primary" href="@Url.Action("AddPost", "Post")">New Post</a>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @Html.Raw(ViewBag.postList)
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

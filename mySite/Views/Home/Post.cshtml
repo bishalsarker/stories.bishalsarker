@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/_site.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-12">
+            <p class="mb-5" style="text-align: center;"><img src="@ViewBag.Cover" class="img-fluid"></p>
+            <div class="row">
+                <div class="col-xl-8 col-lg-12 mx-auto">
+                    <h1 class="mb-5">@Html.Raw(ViewBag.Name)</h1>
+                    <p>@Html.Raw(ViewBag.Content)</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

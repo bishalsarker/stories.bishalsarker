@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "PostList";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2>New category</h2>
+    </div>
+</div>
+<hr />
+@using (Html.BeginForm("AddCat", "Category", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-lg-6 form-group">
+            <input class="form-control" type="text" name="cat_name" placeholder="Category Name..." required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 form-group">
+            <a href="@Url.Action("CatList", "Category")" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Done</button>
+        </div>
+    </div>
+}
+<br />
+<br />
+
+
+
+
+
